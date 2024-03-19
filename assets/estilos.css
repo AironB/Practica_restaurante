@@ -32,6 +32,11 @@ a {
     text-decoration: none;
     color: #AB561D;
 }
+.formulario{
+    display: flex;
+    flex-direction: column;
+    
+}
 .encabezado{
     display:flex;
     justify-content: center;
@@ -275,4 +280,11 @@ h5, h3{
         display: flex;
         justify-content: space-between;
     }
+}
+input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
 }
