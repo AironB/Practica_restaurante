@@ -13,7 +13,15 @@ Selectores
 nav{
     text-align: center;
     background-color: rgba(255, 255, 255, 0.65);
+    color: #AB561D;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;//**Ajusta el indice del elemento para
+    que este encima de los otros elementos
+    (prioridad)*/
 }
+/**alineando los elementos del nav*/
 nav ul li {
     display: inline-block;
     /*Pone los li en linea horizontal**/
@@ -22,6 +30,7 @@ nav ul li {
 }
 a {
     text-decoration: none;
+    color: #AB561D;
 }
 .encabezado{
     display:flex;
@@ -188,15 +197,17 @@ span{
     transition: all .5s;
 }
 .tarjeta-contenido:hover{
-    opacity: 1;
+    opacity: 100%;
+    background-color: #FFF;
 }
-h5{
+h5, h3{
     font-size: 2rem;
     color: #FF7B00;
     font-weight: 400;
     margin-top: 10px;
 }
 .btn-tarjeta{
+    position: relative;
     background-color: #AB561D;
     color: white;
 }
@@ -212,4 +223,56 @@ h5{
 }
 .encabezado *, .ofertas *{
     position: relative;
+}
+.pie-depagina{
+    background-color: #222;
+    color: #FFF;
+    display: grid;
+    grid-template-columns: 50% 50%;    
+}
+.social{
+    background-color: #FF7B00;
+    border-radius: 60%;
+    color: #FFF;
+}
+.social:hover{
+    cursor: pointer;
+}
+/**Uso de media query */
+@media(max-width:768px){
+    .contenido-nosotros{
+        order: 1;
+        flex: 0 0 100%;
+        margin: 50px 0;
+    }
+    .contenido_imagen{
+        order: 0;
+        flex: 0 0 100%;
+    }
+}
+/**Media query para pantallas pequeñas*/
+@media(max-width:576px){
+    .titulo{
+        font-size: 2rem;
+    }
+    .pie-depagina{
+        flex-direction:  column;
+        columns: 1;
+    }
+    .tarjeta{
+        width: 100%;
+    }
+    .caja{
+        margin: 0;
+    }
+}
+@media(min-width:768px) and (max-width:992px){
+    .tarjeta{
+        width: 45%;
+       
+    }
+    .menu-hamburguesa{
+        display: flex;
+        justify-content: space-between;
+    }
 }
